@@ -17,8 +17,10 @@ interface CatalogItem {
   image?: string;
 }
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const fetchJson = async (file: string): Promise<unknown> => {
-  const response = await fetch(`/api/${file}`);
+  const response = await fetch(`${baseUrl}api/${file}`);
 
   if (!response.ok) {
     throw new Error(`Failed to load ${file}`);
@@ -40,7 +42,12 @@ export const getDetailedProducts = async (): Promise<Product[]> => {
     DETAIL_CATEGORIES.map(async category => {
       const data = (await fetchJson(`${category}.json`)) as Product[];
 
-      return data;
+      return data.map(item => ({
+        ...item,
+        images: item.images.map(
+          image => `${baseUrl}${image.replace(/^\//, '')}`,
+        ),
+      }));
     }),
   );
 
@@ -87,6 +94,6 @@ export const getCatalogProducts = async (): Promise<Product[]> => {
     ram: item.ram,
     price: item.price,
     fullPrice: item.fullPrice,
-    images: item.image ? [item.image] : [],
+    images: item.image ? [`${baseUrl}${item.image.replace(/^\//, '')}`] : [],
   }));
 };

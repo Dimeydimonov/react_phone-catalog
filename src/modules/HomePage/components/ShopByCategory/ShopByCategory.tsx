@@ -1,13 +1,22 @@
 import { Link } from 'react-router-dom';
+import { getImageUrl } from '../../../../shared/utils/images';
 import styles from './ShopByCategory.module.scss';
 
 const CATEGORIES = [
-  { label: 'Phones', path: '/phones', image: '/img/category-phones.png' },
-  { label: 'Tablets', path: '/tablets', image: '/img/category-tablets.png' },
+  {
+    label: 'Phones',
+    path: '/phones',
+    image: getImageUrl('/img/category-phones.png'),
+  },
+  {
+    label: 'Tablets',
+    path: '/tablets',
+    image: getImageUrl('/img/category-tablets.png'),
+  },
   {
     label: 'Accessories',
     path: '/accessories',
-    image: '/img/category-accessories.png',
+    image: getImageUrl('/img/category-accessories.png'),
   },
 ];
 

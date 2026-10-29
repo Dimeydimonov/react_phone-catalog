@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
     <ShopProvider>
       <App />
     </ShopProvider>

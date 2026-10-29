@@ -4,14 +4,15 @@ import { Product } from '../../api/types';
 import { PicturesSlider } from './components/PicturesSlider';
 import { ProductsSlider } from './components/ProductsSlider';
 import { ShopByCategory } from './components/ShopByCategory';
+import { getImageUrl } from '../../shared/utils/images';
 import styles from './HomePage.module.scss';
 
 const SLIDE_IMAGES = [
-  '/img/phones/apple-iphone-14-pro/spaceblack/00.webp',
-  '/img/phones/apple-iphone-13-pro-max/sierrablue/00.webp',
-  '/img/tablets/apple-ipad-pro-11-2021/silver/00.webp',
-  '/img/accessories/apple-watch-series-3/space-gray/00.webp',
-  '/img/phones/apple-iphone-12/black/00.webp',
+  getImageUrl('/img/phones/apple-iphone-14-pro/spaceblack/00.webp'),
+  getImageUrl('/img/phones/apple-iphone-13-pro-max/sierrablue/00.webp'),
+  getImageUrl('/img/tablets/apple-ipad-pro-11-2021/silver/00.webp'),
+  getImageUrl('/img/accessories/apple-watch-series-3/space-gray/00.webp'),
+  getImageUrl('/img/phones/apple-iphone-12/black/00.webp'),
 ];
 
 export const HomePage = () => {
