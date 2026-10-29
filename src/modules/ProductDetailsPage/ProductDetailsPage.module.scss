@@ -1,0 +1,117 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 64px 16px;
+}
+
+.state h1 {
+  margin: 0;
+}
+
+.backButton {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.backButton:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 32px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.fullPrice {
+  font-size: 16px;
+}
+
+.meta {
+  margin: 0;
+  color: var(--muted);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.aboutBlock p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.techTitle {
+  margin: 0;
+  font-size: 20px;
+}
+
+.spec {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+}
+
+.spec dt {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.spec dd {
+  margin: 0;
+}
+
+.reloadButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+}
