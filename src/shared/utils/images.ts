@@ -1,5 +1,11 @@
-export const getImageUrl = (path: string): string => {
-  const baseUrl = import.meta.env.BASE_URL;
+export const getBaseUrl = (): string => {
+  const base = import.meta.env.BASE_URL;
 
-  return `${baseUrl}${path.replace(/^\//, '')}`;
+  return base.endsWith('/') ? base : `${base}/`;
+};
+
+export const getImageUrl = (path: string): string => {
+  const base = getBaseUrl();
+
+  return `${base}${path.replace(/^\//, '')}`;
 };

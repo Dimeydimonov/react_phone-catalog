@@ -1,4 +1,5 @@
 import { Product } from './types';
+import { getBaseUrl } from '../shared/utils/images';
 
 const DETAIL_CATEGORIES = ['phones', 'tablets', 'accessories'];
 
@@ -17,7 +18,7 @@ interface CatalogItem {
   image?: string;
 }
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = getBaseUrl();
 
 const fetchJson = async (file: string): Promise<unknown> => {
   const response = await fetch(`${baseUrl}api/${file}`);
